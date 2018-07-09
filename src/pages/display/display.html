@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-buttons start>
+        <button ion-button icon-only menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    </ion-buttons>
+      <ion-title>Order Pizza</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+      <ion-card-header>
+        Please start to order your pizza now!
+      </ion-card-header>
+      <ion-card-content>
+        
+      </ion-card-content>
+    </ion-card>
+<ion-list>
+  <ion-item>
+      <ion-label>
+          Vegetarian
+      </ion-label>
+      <ion-toggle (click) = "isClicked(data.myToggle)" [(ngModel)]="data.myToggle"></ion-toggle>
+  </ion-item>
+  <ion-card *ngIf="data.myToggle">
+      <ion-card-header>
+          I only eat Vegetarian foods
+      </ion-card-header>
+      <ion-list>
+          <button ion-item>
+              Mushroom
+          </button>
+          <button ion-item>
+              Spinach
+          </button>
+          <button ion-item>
+              Red Peppers
+          </button>
+      </ion-list>
+  </ion-card>
+  <ion-card *ngIf="!data.myToggle">
+      <ion-card-header>
+          I love meat
+      </ion-card-header>
+      <ion-list>
+          <button ion-item>
+              Beef
+          </button>
+          <button ion-item>
+              Chicken
+          </button>
+          <button ion-item>
+              Sausage
+          </button>
+      </ion-list>
+  </ion-card>
+</ion-list>
+</ion-content>
